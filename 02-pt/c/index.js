@@ -21,8 +21,6 @@ function clicar(e) {
 }
 
 function calcularMorte(age, gender) {
-    console.log('calculando morte');
-    console.log(gender);
     let diasParaMorte = 0;
     let horasParaMorte = 0;
     if (gender === 'Masculino') {
