@@ -1,0 +1,183 @@
+html {
+    height: 100%;
+}
+body {
+    font-family: 'roboto', sans-serif;
+    background: linear-gradient(45deg, #fc466b, #3f5efb);
+}
+h1 {
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-top: 10%;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.form-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.form-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.form-box .string-box {
+    position: relative;
+}
+
+.form-box .string-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.form-box .string-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.form-box .gender-box label {
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.form-box .gender-box p {
+    color: #fff;
+}
+
+.form-box .gender-box div {
+    display: flex;
+    align-items: center;
+}
+
+.form-box .string-box input:focus ~ label,
+.form-box .string-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #b050a5;
+    font-size: 12px;
+}
+
+.form-box form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.form-box button:hover {
+    background: #b050a5;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #b050a5, 0 0 25px #b050a5, 0 0 50px #b050a5,
+        0 0 100px #b050a5;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-datetime-edit-text,
+input::-webkit-datetime-edit-day-field,
+input::-webkit-datetime-edit-month-field,
+input::-webkit-datetime-edit-year-field {
+    color: transparent;
+    transition: 0.5s;
+}
+
+input:valid::-webkit-datetime-edit-text,
+input:valid::-webkit-datetime-edit-day-field,
+input:valid::-webkit-datetime-edit-month-field,
+input:valid::-webkit-datetime-edit-year-field,
+input:focus::-webkit-datetime-edit-text,
+input:focus::-webkit-datetime-edit-day-field,
+input:focus::-webkit-datetime-edit-month-field,
+input:focus::-webkit-datetime-edit-year-field {
+    color: #fff;
+    transition: 0.5s;
+}
+
+input:checked {
+    transform: scale(1.5);
+}
+
+input[type='radio'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0 10px 0 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+input[type='radio']::before {
+    content: '';
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #b050a5;
+    background-color: CanvasText;
+}
+
+input[type='radio']:checked::before {
+    transform: scale(1);
+}
+
+input[type='radio']:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+}
