@@ -13,24 +13,24 @@ function clicar(e) {
     calcResult(primeiroValor, segundoValor, operator)
 }
 
-function calcResult(primeiroValor, segundoValor, operator) {
-    let resultadoFinal = eval(primeiroValor + operator + segundoValor);      
-    resultado.innerHTML = `O resultado de sua operação é ${resultadoFinal}`;
-}
-
 // function calcResult(primeiroValor, segundoValor, operator) {
-//     let resultadoFinal = 0
-//     if (operator === '+') {
-//         resultadoFinal = parseInt(primeiroValor) + parseInt(segundoValor);
-//     } else if (operator === '-') {
-//         resultadoFinal = parseInt(primeiroValor) - parseInt(segundoValor);
-//     } else if (operator === '*') {
-//         resultadoFinal = parseInt(primeiroValor) * parseInt(segundoValor);
-//     } else if (operator === '/') {
-//         resultadoFinal = parseInt(primeiroValor) / parseInt(segundoValor);
-//     }
-//     console.log(resultadoFinal);
+//     let resultadoFinal = eval(primeiroValor + operator + segundoValor);      
 //     resultado.innerHTML = `O resultado de sua operação é ${resultadoFinal}`;
 // }
+
+function calcResult(primeiroValor, segundoValor, operator) {
+    let resultadoFinal = 0
+    if (operator === '+') {
+        resultadoFinal = parseInt(primeiroValor) + parseInt(segundoValor);
+    } else if (operator === '-') {
+        resultadoFinal = parseInt(primeiroValor) - parseInt(segundoValor);
+    } else if (operator === '*') {
+        resultadoFinal = parseInt(primeiroValor) * parseInt(segundoValor);
+    } else if (operator === '/') {
+        resultadoFinal = parseInt(primeiroValor) / parseInt(segundoValor);
+    }
+    console.log(resultadoFinal);
+    resultado.innerHTML = `O resultado de sua operação é ${resultadoFinal}`;
+}
 
 
