@@ -16,20 +16,31 @@
 
 <body>
     <div class="root">
-        <nav>
-            <nav>
-                <a href="https://nayandrade.github.io/AlphaEdTech_js/01-pt/index.html" target="_blank"><span>Atividade
-                        1</span></a>
-                <a href="https://nayandrade.github.io/AlphaEdTech_js/02-pt/a/index.html" target="_blank"><span>Atividade
-                        2.A</span></a>
-                <a href="https://nayandrade.github.io/AlphaEdTech_js/02-pt/b/index.html" target="_blank"><span>Atividade
-                        2.B</span></a>
-                <a href="https://nayandrade.github.io/AlphaEdTech_js/02-pt/c/index.html" target="_blank"><span>Atividade
-                        2.C</span></a>
-                <a href="https://nayandrade.github.io/AlphaEdTech_js/03-pt/index.html" target="_blank"><span>Atividade
-                        3</span></a>
-            </nav>
+        <h1></h1>
+        <div class="form-box">
+            <h2>Calculadora JS</h2>
+            <form id="calc">
+                <div class="string-box">
+                    <input id="first" type="number" name="first" required>
+                    <label>Primeiro Valor</label>
+                </div>             
+                <div class="string-box">
+                    <input id="second" type="number" name="second" required>
+                    <label>Segundo Valor</label>
+                </div>
+                <div class="string-box">
+                    <select name="operator" id="operator" form="calc">
+                        <option value="+">Soma</option>
+                        <option value="-">Subtração</option>
+                        <option value="*">Multiplicação</option>
+                        <option value="/">Divisão</option>
+                    </select>
+                </div>   
+                <button>Calcular</button>
+            </form>
+        </div>
     </div>
+    <script src="./index.js"></script>
 </body>
 
 </html>
