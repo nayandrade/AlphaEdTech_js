@@ -1,51 +1,26 @@
 const button = document.querySelector('button');
-const inputPeso = document.querySelector('#peso');
-const inputAltura = document.querySelector('#altura');
+const inputMin = document.querySelector('#min');
+const inputMax = document.querySelector('#max');
 const resultado = document.querySelector('h1');
 button.addEventListener('click', (e) => clicar(e));
 
 function clicar(e) {
-    e.preventDefault();
-    let peso = inputPeso.value;
-    let altura = inputAltura.value;
-    handdleData(peso, altura);
+    e.preventDefault(); 
+    let minValue = inputMin.value;
+    let maxValue = inputMax.value;
+    handdleData(minValue, maxValue);
 }
 
-function handdleData(peso, altura) {
-    peso.indexOf(',') > -1 ? (peso = peso.replace(',', '.')) : peso;
-    altura.indexOf(',') > -1 ? (altura = altura.replace(',', '.')) : altura;
-    if (isNaN(peso) || isNaN(altura)) {
-        resultado.innerHTML = 'Preencha todos os campos de forma válida';
-    }
-    calcResult(peso, altura);
+function handdleData(minValue, maxValue) {
+    minValue.indexOf(',') > -1 ? (minValue = minValue.replace(',', '.')) : minValue;
+    maxValue.indexOf(',') > -1 ? (maxValue = maxValue.replace(',', '.')) : maxValue;
+    minValue = parseFloat(minValue);
+    maxValue = parseFloat(maxValue);
+    if (isNaN(minValue) || isNaN(maxValue) || minValue > maxValue || !Number.isInteger(minValue) || !Number.isInteger(maxValue)) {
+        resultado.textContent = 'Valores inválidos';
+    } else {
+        let result = Math.floor(Math.random() * (maxValue - minValue + 1) + minValue);
+        resultado.innerHTML = `Seu número sorteado foi ${result}`;
+    }    
 }
 
-function calcResult(peso, altura) {
-    let imc = 0;
-    imc = peso / (altura * altura);
-    if (imc < 18.5) {
-        resultado.innerHTML = `Seu IMC é ${imc.toFixed(
-            2
-        )}, você está abaixo do peso`;
-    } else if (imc >= 18.5 && imc < 24.9) {
-        resultado.innerHTML = `Seu IMC é ${imc.toFixed(
-            2
-        )}, você está com peso normal`;
-    } else if (imc >= 25 && imc < 29.9) {
-        resultado.innerHTML = `Seu IMC é ${imc.toFixed(
-            2
-        )}, você está com sobrepeso`;
-    } else if (imc >= 30 && imc < 34.9) {
-        resultado.innerHTML = `Seu IMC é ${imc.toFixed(
-            2
-        )}, você está com obesidade grau 1`;
-    } else if (imc >= 35 && imc < 39.9) {
-        resultado.innerHTML = `Seu IMC é ${imc.toFixed(
-            2
-        )}, você está com obesidade grau 2`;
-    } else if (imc >= 40) {
-        resultado.innerHTML = `Seu IMC é ${imc.toFixed(
-            2
-        )}, você está com obesidade grau 3`;
-    }
-}
