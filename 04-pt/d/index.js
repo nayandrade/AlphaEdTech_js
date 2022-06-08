@@ -7,13 +7,13 @@ function clicar(e) {
     const numero = Math.random() * 101;
     console.log(numero.toFixed(1));
     if (numero.toFixed(1) < 8.6 && numero.toFixed(1) >= 0) {
-        resultado.innerHTML = `Parabéns, você é uma senhorinha`;
+        resultado.innerHTML = `Você é aleatoriamente uma idosa`;
     } else if (numero.toFixed(1) >= 8.6 && numero.toFixed(1) < 16.7) {
-        resultado.innerHTML = `Parabéns, você é um senhor`;
+        resultado.innerHTML = `Você é aleatoriamente um idoso`;
     } else if (numero.toFixed(1) >= 16.7 && numero.toFixed(1) < 56.9) {
-        resultado.innerHTML = `Parabéns, você é um senhor xovem, que escuta kpop`;
+        resultado.innerHTML = `Você é aleatoriamente um homem jovem`;
     } else {
-        resultado.innerHTML = `Parabéns, você é uma senhorita xovem, que escuta kpop`;
+        resultado.innerHTML = `Você é aleatoriamente uma mulher jovem`;
     }
 }
 
