@@ -16,15 +16,22 @@
 
 <body>
     <div class="root">
-        <h1></h1>
+        <section>
+                                  
+        </section>
         <div class="form-box">
-            <h2>Geradora de números por extenso</h2>
-            <form id="calc">
+            <h2>Selecione seu produto</h2>
+            <form>
                 <div class="string-box">
-                    <input id="number" type="number" name="number" required>
-                    <label>Insira um número inteiro entre 0 e 10</label>
+                    <select name="product" id="product" form="product">
+                        <option value="product1">Iluminador de livros</option>
+                        <option value="product2">Metralhadora de Marshmallows </option>
+                        <option value="product3">Chinelo Abridor de Garrafas</option>
+                        <option value="product4">Sapato Canguru</option>
+                        <option value="product5">Toca de Pipoca</option>
+                    </select>
                 </div>
-                <button>Gerar</button>
+                <button>Mostrar Produto</button>
             </form>
         </div>
     </div>

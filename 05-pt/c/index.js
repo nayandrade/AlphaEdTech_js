@@ -1,47 +1,36 @@
 const button = document.querySelector('button');
-const valueInput = document.querySelector('#number');
-const resultado = document.querySelector('h1');
+const valueInput = document.querySelector('#product');
+const resultado = document.querySelector('section');
 button.addEventListener('click', (e) => clicar(e));
 
 function clicar(e) {
     e.preventDefault();
-    if (valueInput.value >= 0 && valueInput.value <= 10) {
-        switch (valueInput.value) {
-            case '0':
-                resultado.innerHTML = 'Zero';
-                break;
-            case '1':
-                resultado.innerHTML = 'Um';
-                break;
-            case '2':
-                resultado.innerHTML = 'Dois';
-                break;
-            case '3':
-                resultado.innerHTML = 'Três';
-                break;
-            case '4':
-                resultado.innerHTML = 'Quatro';
-                break;
-            case '5':
-                resultado.innerHTML = 'Cinco';
-                break;
-            case '6':
-                resultado.innerHTML = 'Seis';
-                break;
-            case '7':
-                resultado.innerHTML = 'Sete';
-                break;
-            case '8':
-                resultado.innerHTML = 'Oito';
-                break;
-            case '9':
-                resultado.innerHTML = 'Nove';
-                break;
-            case '10':
-                resultado.innerHTML = 'Dez';
-                break;
-        }
-    } else {
-        resultado.innerHTML = `Insira um valor entre 0 e 10 para ser validado`;
+    let product = ''    
+    switch (valueInput.value) {
+        case 'product1':
+            product = 'https://blog.vindi.com.br/wp-content/uploads/2013/08/produto-criativo-livro-iluminador.jpeg';
+            break;
+        case 'product2':
+            product = 'https://blog.vindi.com.br/wp-content/uploads/2013/08/produto-criativo-marshmallow.jpg';
+            break;
+        case 'product3':
+            product = 'https://blog.vindi.com.br/wp-content/uploads/2013/08/produtos-criativo-abridor-de-garrafas-cerveja.jpg';
+            break;
+        case 'product4':
+            product = 'https://blog.vindi.com.br/wp-content/uploads/2013/08/produtos-criativos-saia-pulando.jpeg';
+            break;
+        case 'product5':
+            product = 'https://blog.vindi.com.br/wp-content/uploads/2013/08/produtos-criativos5.png';
+            break;
     }
+    render(product)
+}
+
+function render(product) {
+    console.log(product)
+    resultado.innerHTML = `
+    <div class="image-container">
+        <div style="background-image: url(${product})"></div>   
+    </div>
+    `
 }
