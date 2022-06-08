@@ -4,20 +4,32 @@ html {
 body {
     font-family: 'roboto', sans-serif;
     background: linear-gradient(45deg, #fc466b, #3f5efb);
+    
 }
 nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    min-width: 995px;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-direction: column;
 }
 
 nav a {
     color: #fafafa;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
     text-decoration: none;
+}
+
+nav div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
 }

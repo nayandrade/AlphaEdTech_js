@@ -8,10 +8,10 @@ function clicar(e) {
     let product = ''    
     switch (valueInput.value) {
         case 'product1':
-            product = 'https://blog.vindi.com.br/wp-content/uploads/2013/08/produto-criativo-livro-iluminador.jpeg';
+            product = './assets/img/chinelo-abridor-de-garrafas.webp';
             break;
         case 'product2':
-            product = 'https://blog.vindi.com.br/wp-content/uploads/2013/08/produto-criativo-marshmallow.jpg';
+            product = 'https://raw.githubusercontent.com/nayandrade/AlphaEdTech_js/main/05-pt/c/assets/images/iluminador-de-livro.webp';
             break;
         case 'product3':
             product = 'https://blog.vindi.com.br/wp-content/uploads/2013/08/produtos-criativo-abridor-de-garrafas-cerveja.jpg';
