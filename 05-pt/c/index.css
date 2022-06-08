@@ -18,7 +18,13 @@ p {
     margin-top: 10%;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 }
-
+h1 {
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-top: 5%;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
 .form-box {
     position: absolute;
     top: 50%;
@@ -134,28 +140,28 @@ textarea:-webkit-autofill:focus {
     border: none;
     outline: none;
     user-select: none;
-    -webkit-user-select: none;    
+    -webkit-user-select: none;
 }
 option {
     font-size: 16px;
     color: rgb(255, 255, 255);
     transition: 0.5s;
-    background-color: #3E2148;
+    background-color: #3e2148;
     border: 0px;
-    outline: 0px;     
+    outline: 0px;
 }
 
 .image-container {
     width: 250px;
     height: 250px;
-    border: 2px solid #38224D;
+    border: 2px solid #38224d;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
 }
 
-.image-container div{
+.image-container div {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -165,6 +171,6 @@ option {
     transition: 1000ms;
 }
 
-.image-container div:hover{
-    transform: scale(1.2) ;
+.image-container div:hover {
+    transform: scale(1.2);
 }
