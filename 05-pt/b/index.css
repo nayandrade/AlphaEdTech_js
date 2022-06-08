@@ -1,0 +1,119 @@
+html {
+    height: 100%;
+}
+body {
+    font-family: 'roboto', sans-serif;
+    background: linear-gradient(45deg, #fc466b, #3f5efb);
+}
+h1 {
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-top: 10%;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.form-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.form-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.form-box .string-box {
+    position: relative;
+    height: 69px;
+}
+
+.form-box .string-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.form-box .string-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.form-box .string-box input:focus ~ label,
+.form-box .string-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #b050a5;
+    font-size: 12px;
+}
+
+.form-box form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.form-box button:hover {
+    background: #b050a5;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #b050a5, 0 0 25px #b050a5, 0 0 50px #b050a5,
+        0 0 100px #b050a5;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+    border: none;
+    -webkit-text-fill-color: #fff;
+    box-shadow: 0 0 0px 1000px transparent inset;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
