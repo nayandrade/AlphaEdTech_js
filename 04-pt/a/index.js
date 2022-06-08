@@ -14,10 +14,13 @@ function clicar(e) {
 function handdleData(peso, altura) {
     peso.indexOf(',') > -1 ? (peso = peso.replace(',', '.')) : peso;
     altura.indexOf(',') > -1 ? (altura = altura.replace(',', '.')) : altura;
+    peso = parseFloat(peso);
+    altura = parseFloat(altura);
     if (isNaN(peso) || isNaN(altura)) {
         resultado.innerHTML = 'Preencha todos os campos de forma válida';
-    }
-    calcResult(peso, altura);
+    } else {
+        calcResult(peso, altura);
+    } 
 }
 
 function calcResult(peso, altura) {
