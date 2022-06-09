@@ -1,0 +1,98 @@
+html {
+    height: 100%;
+}
+body {
+    font-family: 'roboto', sans-serif;
+    background: linear-gradient(45deg, #fc466b, #3f5efb);
+}
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+}
+p {
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 10%;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+h1 {
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-top: 5%;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+.form-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bomb {
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    position: relative;
+    background-image: url(./assets/images/bomba.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.acesa {
+    animation-name: pulse;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        border-radius: 100%;
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.form-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.acesa .faca-se-a-luz {
+    position: absolute;
+    top: 39%;
+    right: 5%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(251, 251, 251);
+    background: radial-gradient(
+        circle,
+        rgba(251, 251, 251, 1) 0%,
+        rgba(255, 244, 0, 1) 38%,
+        rgba(255, 192, 0, 1) 67%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    box-shadow: 0 0 40px 30px rgba(255, 242, 182, 0.6);
+}
+
+
