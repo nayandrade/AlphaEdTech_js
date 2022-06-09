@@ -1,18 +1,22 @@
 const bomb = document.querySelector('.bomb');
 const resultado = document.querySelector('section');
-const dezSegundos = 1000 * 3;
+const armarBomba = document.querySelector('.armar');
+const dezSegundos = 1000 * 10;
 let acesa = false;
-
-bomb.addEventListener('click', desarmarBomba);
 let tokenSetTimeOut = null;
+
+armarBomba.addEventListener('click', init);
+bomb.addEventListener('click', desarmarBomba);
 
 function init() {
     tokenSetTimeOut = setTimeout(explodirBomba, dezSegundos);
-    document.querySelector('h2').innerHTML = 'A bomba foi plantada!';
+    bomb.style.backgroundImage = 'url(./assets/images/bomba.png)';
+    document.querySelector('h2').innerHTML = 'A bomba foi plantada!';    
+    document.querySelector('.faca-se-a-luz').classList.remove('none');
     bomb.classList.add('acesa');
     acesa = true;
 }
-init();
+
 
 function desarmarBomba() {
     if (acesa) {
