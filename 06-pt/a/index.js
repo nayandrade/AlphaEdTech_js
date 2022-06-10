@@ -11,7 +11,7 @@ bomb.addEventListener('click', desarmarBomba);
 function init() {
     tokenSetTimeOut = setTimeout(explodirBomba, dezSegundos);
     bomb.style.backgroundImage = 'url(./assets/images/bomba.png)';
-    document.querySelector('h2').innerHTML = 'A bomba foi plantada!';    
+    document.querySelector('h2').innerHTML = 'A bomba foi armada!';    
     document.querySelector('.faca-se-a-luz').classList.remove('none');
     bomb.classList.add('acesa');
     acesa = true;

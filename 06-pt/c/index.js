@@ -6,6 +6,7 @@ const cancelar = document.querySelector('#cancelar');
 const resultado = document.querySelector('h1');
 const alarme = document.querySelector('audio');
 const umSegundo = 1000;
+const umMinuto = 60;
 let ligado = false;
 let tokenSetInterval = null;
 let meusMinutos = 0;
@@ -22,7 +23,7 @@ function init() {
         Number.isInteger(parseInt(inputCronometro.value))
     ) {
         meusMinutos = Math.floor(inputCronometro.value);
-        segundosTotais = meusMinutos * 60;
+        segundosTotais = meusMinutos * umMinuto;
         segundosTotaisCorridos = segundosTotais;
         minutos.innerHTML = `${meusMinutos}`;
         document.querySelector('h1').innerHTML = 'Contando...!';
