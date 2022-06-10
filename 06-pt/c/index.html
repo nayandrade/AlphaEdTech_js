@@ -15,25 +15,26 @@
     </head>
 
     <body>
-        <header>
-            <div class="armar">Armar a Bomba</div>
-            <div class="cronometro">
-                <h3 class="segundos">00s</h3>
-            </div>
-        </header>
         <div class="root">
             <audio
-                src="https://www.mediacollege.com/downloads/sound-effects/explosion/explosion-01.mp3"
-                id="explosao"
+                src="https://www.mediacollege.com/downloads/sound-effects/movie/lordoftherings/fellowship/gandalf_neverlate.wav"
+                id="alarme"
             ></audio>
-            <audio
-                src="https://www.mediacollege.com/downloads/sound-effects/beep/beep-07.wav"
-                id="tic"
-            ></audio>
+            <h1></h1>
             <div class="form-box">
-                <h2>Plante a Bomba</h2>
-                <div class="bomb acesa">
-                    <div class="faca-se-a-luz none"></div>
+                <h2>Meu alarme</h2>
+                <div class="string-box">
+                    <input id="tempo" type="number" name="tempo" required />
+                    <label>Insira os minutos - 59máx</label>
+                </div>
+                <div class="cronometro">
+                    <span id="minutos">00</span>
+                    <span>:</span>
+                    <span id="segundos">00</span>
+                </div>
+                <div class="botoes">
+                    <button id="definir">Definir</button>
+                    <button id="cancelar">Cancelar</button>
                 </div>
             </div>
         </div>
