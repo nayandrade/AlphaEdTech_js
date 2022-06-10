@@ -78,7 +78,7 @@ function despertar() {
 }
 
 function validarSegundosTotais() {
-    if (segundosTotaisCorridos <= segundosTotais * 0.9) {
+    if (segundosTotaisCorridos <= segundosTotais * 0.05) {
         document.querySelector('.cronometro').classList.add('acesa');
     }
 }
