@@ -32,11 +32,22 @@ header {
     justify-content: space-around;
 }
 
+textarea {
+    font-size: 1rem;
+    background-color: #322251;
+    color: #fff;
+    width: 100%;
+    height: 89%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .form-box {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 400px;
+    width: 1200px;
+    height: 80%;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.6);
@@ -47,40 +58,6 @@ header {
     flex-direction: column;
     align-items: center;
 }
-.bomb {
-    width: 250px;
-    height: 250px;
-    border-radius: 5px;
-    position: relative;
-    background-size: contain;
-    background-repeat: no-repeat;
-    cursor: pointer;
-}
-
-.acesa {
-    animation-name: pulse;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-out;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-    box-shadow: 0 0 2px #fc466a3e;
-}
-
-.acesa span {
-    color: #fc466b;
-    text-shadow: #b050a5 0 0 5px;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(1.05);
-    }
-}
 
 .form-box h2 {
     margin: 0 0 30px;
@@ -88,20 +65,31 @@ header {
     color: #fff;
     text-align: center;
 }
-
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    margin: 10px 0;
+}
 .form-box .string-box {
-    position: relative;
-    height: 69px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #fff;
+    padding: 10px;     
 }
 
 .form-box .string-box input {
-    width: 100%;
+    width: 75%;
+    height: 100%;
     padding: 10px 0;
     font-size: 16px;
     color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.6);
+    border: none;    
     outline: none;
     background: transparent;
 }
@@ -134,7 +122,6 @@ header {
     text-transform: uppercase;
     overflow: hidden;
     transition: 0.5s;
-    margin-top: 40px;
     letter-spacing: 4px;
     outline: none;
     border: none;

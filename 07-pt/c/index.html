@@ -16,25 +16,15 @@
 
     <body>
         <div class="root">
-            <audio
-                src="https://www.mediacollege.com/downloads/sound-effects/movie/lordoftherings/fellowship/gandalf_neverlate.wav"
-                id="alarme"
-            ></audio>
-            <h1></h1>
             <div class="form-box">
-                <h2>Meu alarme</h2>
                 <div class="string-box">
-                    <input id="tempo" type="number" name="tempo" required />
-                    <label>Insira os minutos - 59máx</label>
-                </div>
-                <div class="cronometro">
-                    <span id="minutos">00</span>
-                    <span>:</span>
-                    <span id="segundos">00</span>
-                </div>
-                <div class="botoes">
-                    <button id="definir">Definir</button>
-                    <button id="cancelar">Cancelar</button>
+                    <textarea name="textarea" disabled></textarea>
+
+                    <div class="bottom">
+                        <button id="apagar">Apagar</button>
+                        <input type="text" class="string-input" />
+                        <button id="enviar">Enviar</button>
+                    </div>
                 </div>
             </div>
         </div>
