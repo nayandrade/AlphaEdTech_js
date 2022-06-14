@@ -43,38 +43,6 @@ header {
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.bomb {
-    width: 250px;
-    height: 250px;
-    border-radius: 5px;
-    position: relative;
-    background-size: contain;
-    background-repeat: no-repeat;
-    cursor: pointer;
-}
-
-.acesa {
-    animation-name: pulse;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-out;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        border-radius: 100%;
-    }
-
-    100% {
-        transform: scale(1.05);
-    }
 }
 
 .form-box h2 {
@@ -84,37 +52,112 @@ header {
     text-align: center;
 }
 
-.armar,
-.cronometro {
-    border-radius: 20px;
+.form-box .string-box {
+    position: relative;
+    height: 69px;
+}
+
+.form-box .string-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
     color: #fff;
-    font-weight: 600;
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100px;
-    text-align: center;
-    padding: 5px;
-    cursor: pointer;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
 }
-
-.acesa .faca-se-a-luz {
+.form-box .string-box label {
     position: absolute;
-    top: 39%;
-    right: 5%;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgb(251, 251, 251);
-    background: radial-gradient(
-        circle,
-        rgba(251, 251, 251, 1) 0%,
-        rgba(255, 244, 0, 1) 38%,
-        rgba(255, 192, 0, 1) 67%,
-        rgba(255, 0, 0, 1) 100%
-    );
-    box-shadow: 0 0 40px 30px rgba(255, 242, 182, 0.6);
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
 }
 
-.none {
-    display: none;
+.form-box .string-box input:focus ~ label,
+.form-box .string-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #b050a5;
+    font-size: 12px;
 }
+
+.form-box form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.form-box button:hover {
+    background: #b050a5;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #b050a5, 0 0 25px #b050a5, 0 0 50px #b050a5,
+        0 0 100px #b050a5;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+    border: none;
+    -webkit-text-fill-color: #fff;
+    box-shadow: 0 0 0px 1000px transparent inset;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input::-webkit-datetime-edit-text,
+input::-webkit-datetime-edit-day-field,
+input::-webkit-datetime-edit-month-field,
+input::-webkit-datetime-edit-year-field {
+    color: transparent;
+    transition: 0.5s;
+}
+
+input:valid::-webkit-datetime-edit-text,
+input:valid::-webkit-datetime-edit-day-field,
+input:valid::-webkit-datetime-edit-month-field,
+input:valid::-webkit-datetime-edit-year-field,
+input:focus::-webkit-datetime-edit-text,
+input:focus::-webkit-datetime-edit-day-field,
+input:focus::-webkit-datetime-edit-month-field,
+input:focus::-webkit-datetime-edit-year-field {
+    color: #fff;
+    transition: 0.5s;
+}
+input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
 

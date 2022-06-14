@@ -1,55 +1,19 @@
-const bomb = document.querySelector('.bomb');
-const resultado = document.querySelector('section');
-const armarBomba = document.querySelector('.armar');
-const meusSegundos = 60;
-const umSegundo = 1000
-let acesa = false;
-let tokenSetInterval = null;
+const inputCep = document.querySelector('#cep');
 
-armarBomba.addEventListener('click', init);
-bomb.addEventListener('click', desarmarBomba);
+inputCep.addEventListener('keyup', (e) => render(e))
 
-function init() {
-    bomb.style.backgroundImage = 'url(./assets/images/bomba.png)';
-    document.querySelector('h2').innerHTML = 'A bomba foi armada!';    
-    document.querySelector('.faca-se-a-luz').classList.remove('none');
-    bomb.classList.add('acesa');
-    acesa = true
-    cronometro();
-}
-
-
-function desarmarBomba() {
-    if (acesa) {
-        clearInterval(tokenSetInterval);
-        bomb.classList.remove('acesa');
-        document.querySelector('h2').innerHTML = 'Ufa, bomba desarmada!';
+function render(e) {
+    const resultado = document.querySelector('h1');
+    if (e.key === "Backspace" ) {
+        if(inputCep.value.length === 5) {
+            resultado.innerHTML = resultado.innerHTML.slice(0, -2);
+        } else {
+            resultado.innerHTML = resultado.innerHTML.slice(0, -1);
+        }        
+    } else if (inputCep.value.length === 6 && (e.key === "0" || e.key === "1" || e.key === "2" || e.key === "3" || e.key === "4" || e.key === "5" || e.key === "6" || e.key === "7" || e.key === "8" || e.key === "9")) {
+        resultado.innerHTML += `-${e.key}`
+    } else if (inputCep.value.length <= 10 && inputCep.value.length !== 6 && (e.key === "0" || e.key === "1" || e.key === "2" || e.key === "3" || e.key === "4" || e.key === "5" || e.key === "6" || e.key === "7" || e.key === "8" || e.key === "9")) {
+        resultado.innerHTML += e.key
     }
 }
 
-function explodirBomba() {
-    clearInterval(tokenSetInterval);
-    const explosao = document.querySelector('#explosao');
-    document.querySelector('h2').innerHTML = 'Explodiu';
-    bomb.classList.remove('acesa');
-    bomb.style.backgroundImage = 'url(./assets/images/explosion.png)';
-    explosao.play();
-    acesa = false;
-}
-
-function cronometro() {
-    let tempoSegundos = meusSegundos;
-    const segundos = document.querySelector('.segundos');
-    const ticCronometro = document.querySelector('#tic');
-
-    tokenSetInterval = setInterval(function () {
-        if (tempoSegundos > 0) {
-            tempoSegundos--
-            console.log(tempoSegundos)
-            segundos.innerHTML = `${tempoSegundos}s`
-            ticCronometro.play();
-        } else {
-            explodirBomba()
-        }    
-    }, umSegundo)
-}
