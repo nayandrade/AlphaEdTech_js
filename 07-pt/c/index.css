@@ -1,0 +1,206 @@
+html {
+    height: 100%;
+}
+body {
+    font-family: 'roboto', sans-serif;
+    background: linear-gradient(45deg, #fc466b, #3f5efb);
+}
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+}
+p {
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 10%;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+h1 {
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-top: 5%;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bomb {
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.acesa {
+    animation-name: pulse;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    box-shadow: 0 0 2px #fc466a3e;
+}
+
+.acesa span {
+    color: #fc466b;
+    text-shadow: #b050a5 0 0 5px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.form-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.form-box .string-box {
+    position: relative;
+    height: 69px;
+}
+
+.form-box .string-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.form-box .string-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.form-box .string-box input:focus ~ label,
+.form-box .string-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #b050a5;
+    font-size: 12px;
+}
+
+.form-box button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.cronometro {
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    
+}
+
+
+.acesa .faca-se-a-luz {
+    position: absolute;
+    top: 39%;
+    right: 5%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(251, 251, 251);
+    background: radial-gradient(
+        circle,
+        rgba(251, 251, 251, 1) 0%,
+        rgba(255, 244, 0, 1) 38%,
+        rgba(255, 192, 0, 1) 67%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    box-shadow: 0 0 40px 30px rgba(255, 242, 182, 0.6);
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    width: 100%;
+    
+}
+
+.form-box button:hover {
+    background: #b050a5;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #b050a5, 0 0 25px #b050a5, 0 0 50px #b050a5,
+        0 0 100px #b050a5;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.none {
+    display: none;
+}
+
