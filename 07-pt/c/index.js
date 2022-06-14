@@ -4,6 +4,8 @@ const apagar = document.querySelector('#apagar');
 const input = document.querySelector('input');
 
 button.addEventListener('click', render)
+apagar.addEventListener('click', apagarTextArea)
+
 input.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
       render()
@@ -17,5 +19,8 @@ function render() {
         input.value = '';
         document.querySelector('textarea').scrollTop = document.querySelector('textarea').scrollHeight;
     }
+}
 
+function apagarTextArea () {
+    textarea.innerHTML = '';
 }
