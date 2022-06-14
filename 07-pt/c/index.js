@@ -17,7 +17,7 @@ function render() {
     if(text.length > 0) {
         textarea.innerHTML += `${text}\n`;
         input.value = '';
-        document.querySelector('textarea').scrollTop = document.querySelector('textarea').scrollHeight;
+        textarea.scrollTop = textarea.scrollHeight;
     }
 }
 
