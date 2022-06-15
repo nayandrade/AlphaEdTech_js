@@ -1,0 +1,2 @@
+1. Crie uma função em JavaScript que permita a soma de dois números inteiros positivos. Caso não seja possível a soma, emitir um erro (throw) do tipo **`[sum] Impossible to sum ${num1} + ${num2}`** (‘template string’ no qual num1 é o primeiro parâmetro e num2 é o segundo
+parâmetro);
