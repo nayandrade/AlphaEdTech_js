@@ -24,10 +24,13 @@ function clicar(e) {
             numberTwo.value = '';
             return (document.querySelector('h1').innerHTML = error);
         }
-        console.log(somar(numberOne.value, numberTwo.value));
-        let sum = somar(numberOne.value, ~(numberTwo.value));
-        document.querySelector('h1').innerHTML = somar(sum, 1);
-        numberOne.value = '';
-        numberTwo.value = '';
+        subtract(num1, num2); 
     }
+}
+
+function subtract (num1, num2) {
+    let sum = somar(num1, ~(num2));
+    document.querySelector('h1').innerHTML = somar(sum, 1);
+        num1 = '';
+        num2 = '';
 }

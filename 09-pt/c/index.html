@@ -16,16 +16,20 @@
 
     <body>
         <div class="root">
+            <h1></h1>
             <div class="form-box">
-                <div class="string-box">
-                    <textarea name="textarea" disabled></textarea>
-
-                    <div class="bottom">
-                        <button id="apagar">Apagar</button>
-                        <input type="text" class="string-input" />
-                        <button id="enviar">Enviar</button>
+                <h2>Função multiplicar</h2>
+                <form id="calc">
+                    <div class="string-box">
+                        <input id="num1" type="number" name="num1" required />
+                        <label>Digite o Número 1</label>
                     </div>
-                </div>
+                    <div class="string-box">
+                        <input id="num2" type="number" name="num2" required />
+                        <label>Digite o Número 2</label>
+                    </div>
+                    <button>Calcular</button>
+                </form>
             </div>
         </div>
         <script src="./index.js"></script>
