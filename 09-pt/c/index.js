@@ -15,8 +15,8 @@ function clicar(e) {
         let num1 = parseFloat(numberOne.value);
         let num2 = parseFloat(numberTwo.value);
         try {
-            if (!Number.isInteger(num1) || !Number.isInteger(num2))
-                throw `Impossible to multiply ${num1} * ${num2}, use integers`;
+            if (!Number.isInteger(num1) || !Number.isInteger(num2) || num1 < 0 || num2 < 0)
+                throw `Impossible to multiply ${num1} * ${num2}, use integers and positive numbers`;
         } catch (error) {
             numberOne.value = '';
             numberTwo.value = '';
