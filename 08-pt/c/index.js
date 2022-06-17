@@ -25,8 +25,7 @@ function generateObject(e) {
             throw `insira um dia de nascimento, pois esse campo se encontra vazio`;
         if (height === '' || !Number.isInteger(Number(height)))
             throw `insira uma altura válida`;
-        if (weight === '' || !Number(weight))
-            throw `insira um peso válido`;
+        if (weight === '' || !Number(weight)) throw `insira um peso válido`;
         if (gender === '')
             throw `insira um gênero, pois esse campo se encontra vazio`;
     } catch (error) {
@@ -41,11 +40,20 @@ function generateObject(e) {
         gender: gender,
     };
 
-    console.log(myObject);
+    console.log(myObject, name.lenght);
     nameInput.value = '';
     birthdayInput.value = '';
     heightInput.value = '';
     weightInput.value = '';
     genderInput.value = '';
-    document.querySelector('h1').innerHTML = "Seu objeto se encontra no console";
+    document.querySelector('h1').innerHTML =
+        'Seu objeto se encontra no console';
+    document.querySelector('h2').innerHTML = `
+        <p>Nome: ${myObject.name}</p>
+        <p>Data de nascimento: ${myObject.birthDate}</p>
+        <p>Peso: ${myObject.weight}</p>
+        <p>Altura: ${myObject.height}</p>
+        <p>Gênero: ${myObject.gender}</p>
+        <p>Objeto: ${JSON.stringify(myObject)}</p>
+    `;
 }
