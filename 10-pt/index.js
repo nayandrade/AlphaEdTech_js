@@ -2,12 +2,17 @@ const nameInput = document.querySelector('#name');
 const descriptionInput = document.querySelector('#description');
 const valorInput = document.querySelector('#valor');
 const registerButton = document.querySelector('#cadastrar');
+const editButton = document.querySelector('#editar');
 const listButton = document.querySelector('#listar');
+const cancelButton = document.querySelector('#cancelar');
 let myProducts = [];
 let ids = 1;
+let editedId;
 
 registerButton.addEventListener('click', (e) => generateObject(e));
 listButton.addEventListener('click', (e) => submit(e));
+editButton.addEventListener('click', (e) => confirmEdit(e));
+cancelButton.addEventListener('click', (e) => cancelEdit(e));
 
 function generateObject(e) {
     e.preventDefault();
@@ -39,12 +44,11 @@ function generateObject(e) {
     };
 
     console.log(myProduct);
-
-    document.querySelector('h1').innerHTML =
-        'Produto inserido com sucesso!';
-    nameInput.value = ""
-    descriptionInput.value = ""
-    valorInput.value = ""
+    document.querySelector('h1').classList.remove('box')
+    document.querySelector('h1').innerHTML = 'Produto inserido com sucesso!';
+    nameInput.value = '';
+    descriptionInput.value = '';
+    valorInput.value = '';
     addProduct(myProduct);
 }
 
@@ -57,10 +61,11 @@ function addProduct(myProduct) {
 function submit(e) {
     e.preventDefault();
     renderProducts();
+    document.querySelector('h1').innerHTML = 'Produtos listados com sucesso';
 }
 
 function renderProducts() {
-    console.log('renderizando')
+    console.log('renderizando');
     const list = document.querySelector('table');
     let count = 0;
     list.innerHTML = `
@@ -76,64 +81,104 @@ function renderProducts() {
     while (count < myProducts.length) {
         list.innerHTML += `
         <tr>
-            <td onclick="showStats(${count})">${myProducts[count].nome}</td>
+            <td class="pointer" onclick="showStats(${count})">${myProducts[count].nome}</td>
             <td>${myProducts[count].descricao}</td>
             <td>${myProducts[count].valor}</td>
             <td>${myProducts[count].incluidoEm}</td>
-            <td><ion-icon name="create-outline" onclick="editProduct(${count})"></ion-icon></td>
-            <td><ion-icon name="trash-outline" onclick="deleteProduct(${count})"></ion-icon></td>
+            <td class="pointer"><ion-icon name="create-outline" onclick="editProduct(${count})"></ion-icon></td>
+            <td class="pointer"><ion-icon name="trash-outline" onclick="deleteProduct(${count})"></ion-icon></td>
         </tr>
     `;
-        count ++;
+        count++;
     }
-    document.querySelector('h1').innerHTML =
-    'Produtos listados com sucesso';   
+    
 }
 
 function deleteProduct(index) {
-    console.log(index)
-    let count = 0
+    console.log(index);
+    let count = 0;
     let newProducts = [];
     while (count < myProducts.length) {
-        if(count !== index) {
+        if (count !== index) {
             newProducts.push(myProducts[count]);
         }
-        count ++;     
+        count++;
     }
     myProducts = [...newProducts];
     console.log(myProducts, newProducts, index);
+    document.querySelector('h1').classList.remove('box')
+    document.querySelector('h1').innerHTML = 'Produto removido com sucesso';
     renderProducts();
 }
 
 function editProduct(index) {
-    console.log(index)
-    let count = 0
+    console.log(index);
+    editedId = index;
+    let count = 0;
     while (count < myProducts.length) {
-        if(count === index) {
+        if (count === index) {
             nameInput.value = myProducts[count].nome;
             descriptionInput.value = myProducts[count].descricao;
-            valorInput.value = myProducts[count].valor;           
+            valorInput.value = myProducts[count].valor;
         }
-        count ++;     
+        count++;
     }
-    document.querySelector('h1').innerHTML =
-    'Edite os valores no formulário';
-    deleteProduct(index)   
+    document.querySelector('h1').innerHTML = 'Edite os valores no formulário';
+    registerButton.classList.add('hidden');
+    listButton.classList.add('hidden');
+    editButton.classList.remove('hidden');
+    cancelButton.classList.remove('hidden');
+    document.querySelector('h1').classList.remove('box')
+}
+
+function confirmEdit(e) {
+    e.preventDefault();
+    myProducts[editedId].nome = nameInput.value;
+    myProducts[editedId].descricao = descriptionInput.value;
+    myProducts[editedId].valor = valorInput.value;
+    registerButton.classList.remove('hidden');
+    listButton.classList.remove('hidden');
+    editButton.classList.add('hidden');
+    cancelButton.classList.add('hidden');
+    nameInput.value = '';
+    descriptionInput.value = '';
+    valorInput.value = '';
+    renderProducts()
+    document.querySelector('h1').innerHTML = 'Produto editado com sucesso';
+}
+
+function cancelEdit(e) {
+    e.preventDefault();
+    registerButton.classList.remove('hidden');
+    listButton.classList.remove('hidden');
+    editButton.classList.add('hidden');
+    cancelButton.classList.add('hidden');
+    nameInput.value = '';
+    descriptionInput.value = '';
+    valorInput.value = '';
+    document.querySelector('h1').innerHTML = '';
 }
 
 function showStats(index) {
-    console.log(index)
-    let count = 0
+    console.log(index);
+    let count = 0;
     while (count < myProducts.length) {
-        if(count === index) {
-            document.querySelector('h1').innerHTML =`
+        if (count === index) {
+            document.querySelector('h1').innerHTML = `
             <p>Id: ${myProducts[count].id}</p>
             <p>Nome: ${myProducts[count].nome}</p>
             <p>Descrição: ${myProducts[count].descricao}</p>
             <p>Valor: R$ ${myProducts[count].valor}</p>
             <p>Cadastro em: ${myProducts[count].date}</p>
-            `
+            <p class="pointer" onclick="closeStats()">FECHAR<p>
+            `;
+            document.querySelector('h1').classList.add('box')
         }
-        count ++;
-    }    
+        count++;
+    }
+}
+
+function closeStats() {
+    document.querySelector('h1').innerHTML = "";
+    document.querySelector('h1').classList.remove('box')
 }

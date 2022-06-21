@@ -16,7 +16,7 @@
 
     <body>
         <div class="root">
-            <h1>Cadastro de Objetos</h1>
+            <h1>Cadastro de Produtos</h1>
             <div class="form-box">
                 <div class="flex">
                     <form id="calc">
@@ -42,8 +42,17 @@
                             />
                             <label>Valor</label>
                         </div>
-                        <button id="cadastrar">Cadastrar</button>
-                        <button id="listar">Listar</button>
+                        <div class="buttons">
+                            <div>
+                                <button class="" id="cadastrar">Cadastrar</button>
+                                <button class="hidden" id="editar">Confirmar</button>
+                            </div>
+                            <div>
+                                <button id="listar">Listar</button>
+                                <button class="hidden" id="cancelar">Cancelar</button>
+                            </div>
+                            
+                        </div>
                     </form>
                     <div class="table">
                         <table>
