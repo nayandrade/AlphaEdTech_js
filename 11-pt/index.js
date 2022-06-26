@@ -13,6 +13,7 @@ registerButton.addEventListener('click', (e) => generateObject(e));
 listButton.addEventListener('click', (e) => submit(e));
 editButton.addEventListener('click', (e) => confirmEdit(e));
 cancelButton.addEventListener('click', (e) => cancelEdit(e));
+document.querySelector('#search-icon').addEventListener('click', searchProduct)
 
 function generateObject(e) {
     e.preventDefault();
@@ -197,4 +198,37 @@ function sortByDate() {
         return 0;
     });
     renderProducts()
+}
+
+function searchProduct() {
+    const search = document.querySelector('#search').value;
+    console.log(`procurando... ${search}`);
+    if(search === '') {
+        renderProducts();
+    } else {
+        document.querySelector('table').innerHTML = `
+        <tr>
+            <th class="pointer" onclick="sortByName()">Nome</th>
+            <th>Descrição</th>
+            <th class="pointer" onclick="sortByValor()">Valor</th>
+            <th class="pointer" onclick="sortByDate()">IncluidoEm</th>
+            <th>Editar</th>
+            <th>Apagar</th>
+        </tr>
+    `;
+        for(let i = 0; i < myProducts.length; i++) {
+            if(myProducts[i].nome.includes(search) || myProducts[i].descricao.includes(search)) {
+                document.querySelector('table').innerHTML += `
+                <tr>
+                    <td class="pointer" onclick="showStats(${i})">${myProducts[i].nome}</td>
+                    <td>${myProducts[i].descricao}</td>
+                    <td>${myProducts[i].valor}</td>
+                    <td>${myProducts[i].incluidoEm}</td>
+                    <td class="pointer"><ion-icon name="create-outline" onclick="editProduct(${i})"></ion-icon></td>
+                    <td class="pointer"><ion-icon name="trash-outline" onclick="deleteProduct(${i})"></ion-icon></td>
+                </tr>
+            `;
+            }
+        }
+    }
 }

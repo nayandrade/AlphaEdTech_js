@@ -89,6 +89,23 @@ p {
     font-size: 12px;
 }
 
+.search {
+    position: relative;
+}
+
+.search ion-icon {
+    position: absolute;
+    top: 25%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 30px;
+}
+.search ion-icon:hover {
+    cursor: pointer;
+    filter: brightness(1.5);
+}
+
 button {
     position: relative;
     display: inline-block;
@@ -134,7 +151,7 @@ button {
 .flex {
     display: flex;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: space-between;
     max-height: 570px; 
 }
 
