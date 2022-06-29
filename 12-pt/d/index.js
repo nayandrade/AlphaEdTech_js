@@ -365,9 +365,8 @@ function renderCards() {
 
 function checkResult() {
     console.log('checando resultados');
-    isTwoPair();
     isPair();
-    isHighCard();
+    isHighCard()
 }
 function isHighCard() {
     if (!result) {
@@ -387,82 +386,38 @@ function isHighCard() {
 }
 
 function isPair() {
-    if (!result) {
-        let pair = false;
-        let firstCard = myCards[0];
-        let secondCard = myCards[1];
-        let thirdCard = myCards[2];
-        let fourthCard = myCards[3];
-        let fifthCard = myCards[4];
-        if (firstCard.value === secondCard.value) {
-            pair = true;
-        } else if (firstCard.value === thirdCard.value) {
-            pair = true;
-        } else if (firstCard.value === fourthCard.value) {
-            pair = true;
-        } else if (firstCard.value === fifthCard.value) {
-            pair = true;
-        } else if (secondCard.value === thirdCard.value) {
-            pair = true;
-        } else if (secondCard.value === fourthCard.value) {
-            pair = true;
-        } else if (secondCard.value === fifthCard.value) {
-            pair = true;
-        } else if (thirdCard.value === fourthCard.value) {
-            pair = true;
-        } else if (thirdCard.value === fifthCard.value) {
-            pair = true;
-        } else if (fourthCard.value === fifthCard.value) {
-            pair = true;
-        }
-        console.log(pair);
-        if (pair) {
-            result = true;
-            document.querySelector('h1').innerHTML = 'Você fez um par!';
-        }
-    }
+    let repeatedCards = [];
+    if (!result) {  
+        for (let i = 0; i < myCards.length; i++) {
+            for (let j = i+1; j < myCards.length; j++) {
+               if (myCards[i].value === myCards[j].value) {
+                    repeatedCards.push(myCards[i]);
+                }
+            }
+        }  
+        renderPairs(repeatedCards) 
+    }         
 }
 
-function isTwoPair() {
-    if (!result) {
-        let pair = 0;
-        let firstCard = myCards[0];
-        let secondCard = myCards[1];
-        let thirdCard = myCards[2];
-        let fourthCard = myCards[3];
-        let fifthCard = myCards[4];
-        if (firstCard.value === secondCard.value) {
-            pair++;
-        } else if (firstCard.value === thirdCard.value) {
-            pair++;
-        } else if (firstCard.value === fourthCard.value) {
-            pair++;
-        } else if (firstCard.value === fifthCard.value) {
-            pair++;
-        } else if (secondCard.value === thirdCard.value) {
-            pair++;
-        } else if (secondCard.value === fourthCard.value) {
-            pair++;
-        } else if (secondCard.value === fifthCard.value) {
-            pair++;
-        } else if (thirdCard.value === fourthCard.value) {
-            pair++;
-        } else if (thirdCard.value === fifthCard.value) {
-            pair++;
-        } else if (fourthCard.value === fifthCard.value) {
-            pair++;
-        }
-        if (pair === 2) {
-            result = true
-            document.querySelector('h1').innerHTML = 'Você fez dois pares!';
-        }
-    }
-}
+function renderPairs(repeatedCards) {
+    console.log(repeatedCards)
+    if (repeatedCards.length === 6) {
+        result = true;
+        document.querySelector('h1').innerHTML = 'Você fez uma quadra!';
+    }if (repeatedCards.length === 4) {
+        result = true;
+        document.querySelector('h1').innerHTML = 'Você fez um fullhouse!';
+    } else if (repeatedCards.length === 3) {
+        result = true;
+        document.querySelector('h1').innerHTML = 'Você fez uma trinca!';
+    } else if (repeatedCards.length === 2) {
+        result = true;
+        document.querySelector('h1').innerHTML = 'Você fez dois pares!';
+    } else if (repeatedCards.length === 1) {
+        result = true;
+        document.querySelector('h1').innerHTML = 'Você fez um par!';
+    }    
 
-function isTrio() {
-    if (!result) {
-        
-    }
 }
 
 function resetTable() {
@@ -471,5 +426,5 @@ function resetTable() {
     gameCards = [...deck];
     hands.innerHTML = '';
     document.querySelector('h1').innerHTML = '';
-    result = false
+    result = false;
 }
